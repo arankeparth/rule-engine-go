@@ -50,7 +50,7 @@ func MatchHeaders(headers map[string]string) string {
 		score := 0
 
 		// Check 'equals' conditions
-		if equalsConditions, ok := rule.Conditions["equals"]; ok {
+		if equalsConditions, ok := rule.Conditions[equalsKey]; ok {
 			for key, expectedValue := range equalsConditions {
 				if headers[key] == expectedValue {
 					score++
@@ -62,7 +62,7 @@ func MatchHeaders(headers map[string]string) string {
 		}
 
 		// Check 'not_equals' conditions
-		if notEqualsConditions, ok := rule.Conditions["not_equals"]; ok {
+		if notEqualsConditions, ok := rule.Conditions[notEqualsKey]; ok {
 			for key, notExpectedValue := range notEqualsConditions {
 				if headers[key] != notExpectedValue {
 					score++
@@ -74,7 +74,7 @@ func MatchHeaders(headers map[string]string) string {
 		}
 
 		// Check 'contains' conditions
-		if containsConditions, ok := rule.Conditions["contains"]; ok {
+		if containsConditions, ok := rule.Conditions[containsKey]; ok {
 			for key, substring := range containsConditions {
 				if strings.Contains(headers[key], substring) {
 					score++
@@ -98,7 +98,7 @@ func MatchHeaders(headers map[string]string) string {
 		log.Printf("Best match: %+v", bestMatch)
 		return bestMatch.Response
 	}
-	return ""
+	return noMatchRespFile
 }
 
 // HandleRequest processes incoming requests
