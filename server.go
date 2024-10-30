@@ -16,7 +16,6 @@ func main() {
 
 	// Define the HTTP handler function
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		// Directly handle the request without queuing
 		bl.HandleRequest(w, r)
 	})
 	// Start the HTTP server
