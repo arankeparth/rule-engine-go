@@ -2,8 +2,8 @@ package bl
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"rule-engine/utils"
 	"strings"
@@ -32,7 +32,7 @@ func LoadRules() error {
 	if err := json.Unmarshal(data, &rules); err != nil {
 		return err
 	}
-	fmt.Println(rules)
+	log.Printf("Rules loaded: %+v", rules)
 	return nil
 }
 
@@ -86,17 +86,16 @@ func MatchHeaders(headers map[string]string) string {
 		}
 		// Update best match if this rule has a higher score
 		if score > maxScore {
-			fmt.Println(maxScore, score, rule, rule.Response)
+			log.Printf("Found a better match, %+v", rule)
 			maxScore = score
 			bestMatch = rule
-			fmt.Println(bestMatch)
 		}
 	}
 
 	if maxScore != 0 {
 		// Cache the response before returning
 		utils.StoreValue(headers, bestMatch.Response)
-		fmt.Println(bestMatch)
+		log.Printf("Best match: %+v", bestMatch)
 		return bestMatch.Response
 	}
 	return ""

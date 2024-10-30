@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"rule-engine/bl"
@@ -20,7 +19,6 @@ func main() {
 		// Directly handle the request without queuing
 		bl.HandleRequest(w, r)
 	})
-	fmt.Println("hi")
 	// Start the HTTP server
 	log.Printf("Server running on port %s", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
