@@ -13,7 +13,6 @@ This project is a high-performance Rule Engine server built in Go, designed to r
 ## Getting Started
 
 ### Prerequisites
-- Go 1.16+
 - Docker
 
 ### Installation
