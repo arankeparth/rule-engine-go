@@ -117,5 +117,1206 @@
             }
         },
         "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
+    },
+    {
+        "rule_id": 1,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "contains": {
+                "Vegetable": "garlic"
+            }
+        },
+        "response": "responses/resp_1.json"
+    },
+    {
+        "rule_id": 2,
+        "conditions": {
+            "equals": {
+                "Car": "Mg",
+                "Planet": "Earth",
+                "Bird": "owl"
+            }
+        },
+        "response": "responses/resp_2.json"
+    },
+    {
+        "rule_id": 3,
+        "conditions": {
+            "equals": {
+                "Animal": "Lion"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_3.json"
+    },
+    {
+        "rule_id": 4,
+        "conditions": {
+            "equals": {
+                "Car": "Ferrari",
+                "Fruit": "mango",
+                "Metal": "silver"
+            },
+            "contains": {
+                "Vegetable": "tomato"
+            }
+        },
+        "response": "responses/resp_4.json"
+    },
+    {
+        "rule_id": 5,
+        "conditions": {
+            "equals": {
+                "Planet": "Venus",
+                "Bird": "parrot"
+            }
+        },
+        "response": "responses/resp_5.json"
+    },
+    {
+        "rule_id": 6,
+        "conditions": {
+            "equals": {
+                "Metal": "copper",
+                "Animal": "Tiger"
+            },
+            "not_equals": {
+                "Car": "Byd"
+            }
+        },
+        "response": "responses/resp_6.json"
+    },
+    {
+        "rule_id": 7,
+        "conditions": {
+            "equals": {
+                "Fruit": "banana",
+                "Planet": "Mars",
+                "Vegetable": "carrots"
+            }
+        },
+        "response": "responses/resp_7.json"
+    },
+    {
+        "rule_id": 8,
+        "conditions": {
+            "equals": {
+                "Bird": "crow",
+                "Metal": "iron",
+                "Animal": "Cow"
+            },
+            "contains": {
+                "Fruit": "apple"
+            }
+        },
+        "response": "responses/resp_8.json"
+    },
+    {
+        "rule_id": 9,
+        "conditions": {
+            "equals": {
+                "Planet": "Saturn",
+                "Car": "Ferrari"
+            }
+        },
+        "response": "responses/resp_9.json"
+    },
+    {
+        "rule_id": 10,
+        "conditions": {
+            "equals": {
+                "Metal": "gold",
+                "Vegetable": "beetroot",
+                "Bird": "chicken"
+            }
+        },
+        "response": "responses/resp_10.json"
+    },
+    {
+        "rule_id": 11,
+        "conditions": {
+            "equals": {
+                "Car": "Tata",
+                "Bird": "falcon"
+            },
+            "not_equals": {
+                "Vegetable": "spinach"
+            }
+        },
+        "response": "responses/resp_11.json"
     }
 ]

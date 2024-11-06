@@ -39,6 +39,7 @@ func LoadRules() error {
 func MatchHeaders(headers map[string]string) string {
 	var bestMatch Rule
 	var maxScore int
+	var mutex sync.Mutex
 
 	// Check if we have a cached response for these headers.
 	// This will optimize the performance in case the number of rules is very high.
@@ -46,51 +47,83 @@ func MatchHeaders(headers map[string]string) string {
 	if cachedResponse, found := utils.GetValue(headers); found {
 		return cachedResponse
 	}
-	for _, rule := range rules {
-		score := 0
 
-		// Check 'equals' conditions
-		if equalsConditions, ok := rule.Conditions[equalsKey]; ok {
-			for key, expectedValue := range equalsConditions {
-				if headers[key] == expectedValue {
-					score++
-				} else {
-					score = 0
-					break
+	var wg sync.WaitGroup
+	processPart := func(part []Rule) {
+		defer wg.Done()
+		localMaxScore := 0
+		var localBestRule Rule
+		for _, rule := range part {
+			score := 0
+
+			// Check 'equals' conditions
+			if equalsConditions, ok := rule.Conditions[equalsKey]; ok {
+				for key, expectedValue := range equalsConditions {
+					if headers[key] == expectedValue {
+						score++
+					} else {
+						score = 0
+						break
+					}
 				}
+			}
+
+			// Check 'not_equals' conditions
+			if notEqualsConditions, ok := rule.Conditions[notEqualsKey]; ok {
+				for key, notExpectedValue := range notEqualsConditions {
+					if headers[key] != notExpectedValue {
+						score++
+					} else {
+						score = 0
+						break
+					}
+				}
+			}
+
+			// Check 'contains' conditions
+			if containsConditions, ok := rule.Conditions[containsKey]; ok {
+				for key, substring := range containsConditions {
+					if strings.Contains(headers[key], substring) {
+						score++
+					} else {
+						score = 0
+						break
+					}
+				}
+			}
+
+			// Update the local maximum score
+			if score > localMaxScore {
+				localMaxScore = score
+				localBestRule = rule
 			}
 		}
 
-		// Check 'not_equals' conditions
-		if notEqualsConditions, ok := rule.Conditions[notEqualsKey]; ok {
-			for key, notExpectedValue := range notEqualsConditions {
-				if headers[key] != notExpectedValue {
-					score++
-				} else {
-					score = 0
-					break
-				}
-			}
+		// Update the global maxScore safely
+		mutex.Lock()
+		if localMaxScore > maxScore {
+			maxScore = localMaxScore
+			bestMatch = localBestRule
 		}
-
-		// Check 'contains' conditions
-		if containsConditions, ok := rule.Conditions[containsKey]; ok {
-			for key, substring := range containsConditions {
-				if strings.Contains(headers[key], substring) {
-					score++
-				} else {
-					score = 0
-					break
-				}
-			}
-		}
-		// Update best match if this rule has a higher score
-		if score > maxScore {
-			log.Printf("Found a better match, %+v", rule)
-			maxScore = score
-			bestMatch = rule
-		}
+		mutex.Unlock()
 	}
+
+	// Divide the rules into four parts
+	partSize := (len(rules) + 3) / 4 // Ensure rounding up to cover all rules
+	part1 := rules[:partSize]
+	part2 := rules[partSize : 2*partSize]
+	part3 := rules[2*partSize : 3*partSize]
+	part4 := rules[3*partSize:]
+
+	// Process each part concurrently
+	wg.Add(4)
+	go processPart(part1)
+	go processPart(part2)
+	go processPart(part3)
+	go processPart(part4)
+
+	// Wait for all parts to finish processing
+	wg.Wait()
 
 	if maxScore != 0 {
 		// Cache the response before returning
