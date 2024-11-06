@@ -36,8 +36,8 @@ func LoadRules() error {
 	return nil
 }
 
-func MatchHeaders(headers map[string]string) string {
-	var bestMatch Rule
+func MatchHeaders(headers map[string]string) []string {
+	bestMatch := []string{}
 	var maxScore int
 	var mutex sync.Mutex
 
@@ -52,7 +52,7 @@ func MatchHeaders(headers map[string]string) string {
 	processPart := func(part []Rule) {
 		defer wg.Done()
 		localMaxScore := 0
-		var localBestRule Rule
+		localBestRules := []string{}
 		for _, rule := range part {
 			score := 0
 
@@ -95,7 +95,9 @@ func MatchHeaders(headers map[string]string) string {
 			// Update the local maximum score
 			if score > localMaxScore {
 				localMaxScore = score
-				localBestRule = rule
+				localBestRules = []string{rule.Response}
+			} else if score == localMaxScore {
+				localBestRules = append(localBestRules, rule.Response)
 			}
 		}
 
@@ -103,7 +105,9 @@ func MatchHeaders(headers map[string]string) string {
 		mutex.Lock()
 		if localMaxScore > maxScore {
 			maxScore = localMaxScore
-			bestMatch = localBestRule
+			bestMatch = localBestRules
+		} else if localMaxScore == maxScore {
+			bestMatch = append(bestMatch, localBestRules...)
 		}
 		mutex.Unlock()
 	}
@@ -127,11 +131,11 @@ func MatchHeaders(headers map[string]string) string {
 
 	if maxScore != 0 {
 		// Cache the response before returning
-		utils.StoreValue(headers, bestMatch.Response)
+		utils.StoreValue(headers, bestMatch)
 		log.Printf("Best match: %+v", bestMatch)
-		return bestMatch.Response
+		return bestMatch
 	}
-	return noMatchRespFile
+	return []string{noMatchRespFile}
 }
 
 // HandleRequest processes incoming requests
@@ -142,27 +146,50 @@ func HandleRequest(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Find the best matching rule response
-	responseFile := MatchHeaders(headers)
-	// // Load and cache the JSON response
-	if cachedResponse, found := responseCache.Load(responseFile); found {
-		w.Header().Set("Content-Type", "application/json")
-		_, _ = w.Write(cachedResponse.([]byte))
-		w.WriteHeader(http.StatusOK)
-		return
+	responseFiles := MatchHeaders(headers)
+	var jsonArray []map[string]interface{}
+
+	// Iterate through response files
+	for _, responseFile := range responseFiles {
+		var jsonData map[string]interface{}
+
+		// Check if the response is already cached
+		if cachedResponse, found := responseCache.Load(responseFile); found {
+			if err := json.Unmarshal(cachedResponse.([]byte), &jsonData); err != nil {
+				http.Error(w, "Invalid cached JSON format", http.StatusInternalServerError)
+				return
+			}
+			jsonArray = append(jsonArray, jsonData)
+			continue
+		}
+
+		// Load the JSON response file from disk if not cached
+		data, err := ioutil.ReadFile(responseFile)
+		if err != nil {
+			http.Error(w, "Response file not found", http.StatusNotFound)
+			return
+		}
+
+		// Parse the JSON data
+		if err := json.Unmarshal(data, &jsonData); err != nil {
+			http.Error(w, "Invalid JSON format in file", http.StatusInternalServerError)
+			return
+		}
+
+		// Cache the loaded response for future requests
+		responseCache.Store(responseFile, data)
+		jsonArray = append(jsonArray, jsonData)
 	}
 
-	// Load JSON response file from disk and cache it
-	data, err := ioutil.ReadFile(responseFile)
+	// Convert the array of JSON objects into a JSON array
+	responseData, err := json.Marshal(jsonArray)
 	if err != nil {
-		http.Error(w, "Response file not found", http.StatusNotFound)
+		http.Error(w, "Error creating JSON response", http.StatusInternalServerError)
 		return
 	}
 
-	// Cache the loaded response for future requests
-	responseCache.Store(responseFile, data)
-
-	// Send the response
+	// Send the combined JSON array response
 	w.Header().Set("Content-Type", "application/json")
-	_, _ = w.Write(data)
 	w.WriteHeader(http.StatusOK)
+	_, _ = w.Write(responseData)
 }

@@ -20,17 +20,17 @@ func CreateCacheKey(headers map[string]string) string {
 	return newKey
 }
 
-func GetValue(headers map[string]string) (string, bool) {
+func GetValue(headers map[string]string) ([]string, bool) {
 	cacheKey := CreateCacheKey(headers)
 	cachedResponse, found := requestCache.Load(cacheKey)
 	if found {
 		log.Printf("############## %v", found)
-		return cachedResponse.(string), found
+		return cachedResponse.([]string), found
 	}
-	return "", found
+	return nil, found
 }
 
-func StoreValue(headers map[string]string, response string) {
+func StoreValue(headers map[string]string, response []string) {
 	key := CreateCacheKey(headers)
 	requestCache.Store(key, response)
 }
